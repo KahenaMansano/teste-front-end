@@ -3,9 +3,9 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
 function HomePage() {
-  const [query, setQuery] = useState([])
-  const [results, setResults] = useState([])
-  const [linkSearch, setLink] = useState([])
+  const [query, setQuery] = useState([null])
+  const [results, setResults] = useState([null])
+  const [linkSearch, setLink] = useState([null])
   const API_KEY = 'AIzaSyATfhVn94Jm7VsZrAH1Orl0jx30YR-nu6s'
 
   const searchInput = e => {
