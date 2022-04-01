@@ -30,14 +30,12 @@ function HomePage() {
     }
   }, [query])
 
+  function imageClick() {
+    alert('image')
+  }
+
   return (
-    <div
-      className="home"
-      // style={{
-      //   backgroundImage:
-      //     'url(https://54337.cdn.simplo7.net/static/54337/sku/tricoline-tricoline-lisa-cinza-chumbo-fio-50-100-algodao-com-1-50-lg--p-1595291707803.jpg)'
-      // }}
-    >
+    <div className="home">
       <input
         type="text"
         className="input"
@@ -56,10 +54,12 @@ function HomePage() {
                       backgroundImage: `url(${video.snippet.thumbnails.high.url})`
                     }}
                   />
+
                   <img
                     className="imgPlay"
                     src="https://cdn-icons-png.flaticon.com/512/0/375.png"
                     alt=""
+                    onClick={() => imageClick()}
                   />
                 </div>
                 <div className="texts">
