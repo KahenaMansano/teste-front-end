@@ -41,5 +41,7 @@ export const buscaVideo = params => {
     youtubeSearch(API_KEY, { q: params })
       .then(data => dispatch(detailsVideoSucess(data.items)))
       .catch(() => dispatch(detailsVideoError()))
+
+    console.log(params, 'params dentro do busca video')
   }
 }

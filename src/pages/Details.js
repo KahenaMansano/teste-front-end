@@ -4,9 +4,14 @@ import { buscaVideo } from '../store/actions/detailsAC'
 
 class Details extends Component {
   buscaInput = e => {
-    const valor = e.target.value
-    this.props.buscaVideo(valor)
+    console.log(e, 'event dentro do busca')
+    if (e.keyCode === 13) {
+      const valor = e.target.value
+      console.log(valor, 'valor dentro do busca')
+      return buscaVideo(valor)
+    }
   }
+
   render() {
     return (
       <div>

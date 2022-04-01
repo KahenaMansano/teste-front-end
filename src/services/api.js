@@ -1,3 +1,7 @@
-const API_KEY = 'AIzaSyATfhVn94Jm7VsZrAH1Orl0jx30YR-nu6s'
+import axios from 'axios'
 
-export default API_KEY
+const instance = axios.create({
+  baseURL: 'https://www.googleapis.com/youtube/v3'
+})
+
+export default instance

@@ -1,0 +1,104 @@
+.home {
+  background-image: linear-gradient(black, rgb(37, 36, 36),#646464, rgb(201, 201, 201), white);
+   display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  outline-width: 0;
+  height: 40px;
+  width: 238px;
+  border-radius: 5px;
+  border: none;
+  padding: 5px 15px;
+}
+
+.containerList{
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.listCards {
+  display: grid;
+  width: 100vw;
+  grid-template-columns: repeat(auto-fit, minmax(264px, 2fr));
+  gap: 1.5rem;
+  justify-content: space-between;
+  justify-items: center;
+  
+}
+
+.cardVideo {
+  width: 264px;
+  height: 380px;
+  text-align: left;
+  background-color: black;
+  border-radius: 7px;
+  box-shadow: 0 0 0.5em black;
+}
+
+.cardVideo:hover {
+  transform: scale(1.08);
+  opacity: 1;
+}
+
+.Imgs{
+  position: relative;
+}
+
+.imgPlay {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+    top: 30%;
+    left: 36%;
+    z-index: 2;
+    opacity: 0.3;
+    transition: .3s ease;
+    cursor:pointer;
+}
+
+.imgPlay:hover{
+  opacity: 0.7;
+}
+
+.cardImg {
+  margin-top: 7px;
+  width: 264px;
+  height: 176px;
+  background-position: center;
+  background-size:cover;
+  background-repeat: no-repeat;
+  display:inline-block;
+  z-index: 1;
+  
+  
+}
+
+.texts {
+padding: 10px;
+}
+
+.cardTitle {
+  width: 250px;
+  font-weight: 500;
+  font-size: 16px;
+  color: white;
+  overflow-wrap: break-word;
+}
+
+.cardChannel {
+  font-weight: 600;
+  font-size: 14px;
+  color: #646464;
+}
+
+.carddescription {
+  font-weight: 400;
+  font-size: 15px;
+  color: white;
+}
