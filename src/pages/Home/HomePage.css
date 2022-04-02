@@ -24,7 +24,7 @@
 
 .listCards {
   display: grid;
-  width: 100vw;
+  width: 90vw;
   grid-template-columns: repeat(auto-fit, minmax(264px, 2fr));
   gap: 1.5rem;
   justify-content: space-between;
@@ -34,11 +34,12 @@
 
 .cardVideo {
   width: 264px;
-  height: 380px;
+  height: 360px;
   text-align: left;
   background-color: black;
   border-radius: 7px;
   box-shadow: 0 0 0.5em black;
+  object-fit: contain;
 }
 
 .cardVideo:hover {
@@ -75,30 +76,38 @@
   background-repeat: no-repeat;
   display:inline-block;
   z-index: 1;
-  
-  
 }
 
 .texts {
 padding: 10px;
+width: 250px;
+height: auto;
+object-fit: contain;
 }
 
 .cardTitle {
-  width: 250px;
   font-weight: 500;
   font-size: 16px;
   color: white;
-  overflow-wrap: break-word;
+  margin-top: 0;
+  width: 250px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .cardChannel {
+  margin-top: 0;
   font-weight: 600;
   font-size: 14px;
   color: #646464;
+  overflow-wrap: break-word;
 }
 
 .carddescription {
   font-weight: 400;
-  font-size: 15px;
+  font-size: 14px;
   color: white;
+  overflow-wrap: break-word;
+  margin-bottom: 10px;
 }

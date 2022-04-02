@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
-// import videosAPI from '../services/videosAPI'
-import videosAPI from '../services/api'
-import apiKey from '../services/apiKey'
+import { useNavigate } from 'react-router-dom'
+import videosAPI from '../../services/api'
+import apiKey from '../../services/apiKey'
 import './HomePage.css'
 
 function HomePage() {
   const [query, setQuery] = useState()
   const [results, setResults] = useState([])
+  let navigate = useNavigate()
 
   const searchInput = e => {
     if (e.keyCode === 13) {
@@ -19,9 +20,8 @@ function HomePage() {
     if (query !== undefined) {
       async function searchData() {
         const request = await videosAPI.get(
-          `search?part=id,snippet&q=${query}&key=${apiKey}&regionCode=BR`
+          `search?part=id,snippet&q=${query}&key=${apiKey}&regionCode=BR&type=video&maxResults=10`
         )
-        console.log(request.data.items, ' retorno do request')
         setResults(request.data.items)
 
         return request
@@ -30,8 +30,8 @@ function HomePage() {
     }
   }, [query])
 
-  function imageClick() {
-    alert('image')
+  const imageClick = id => {
+    navigate(`/${id}`)
   }
 
   return (
@@ -39,14 +39,14 @@ function HomePage() {
       <input
         type="text"
         className="input"
-        placeholder="Que tipo de vídeo está procurando?"
+        placeholder="Quero buscar um vídeo sobre..."
         onKeyDown={e => searchInput(e)}
       />
       <div className="containerList">
         <div className="listCards">
-          {results.map((video, i) => {
+          {results.map(video => {
             return (
-              <div key={video.id.videoId} className="cardVideo">
+              <div key={video.etag} className="cardVideo">
                 <div className="Imgs">
                   <div
                     className="cardImg"
@@ -59,7 +59,7 @@ function HomePage() {
                     className="imgPlay"
                     src="https://cdn-icons-png.flaticon.com/512/0/375.png"
                     alt=""
-                    onClick={() => imageClick()}
+                    onClick={() => imageClick(video.id.videoId)}
                   />
                 </div>
                 <div className="texts">
