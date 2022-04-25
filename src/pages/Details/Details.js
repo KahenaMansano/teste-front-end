@@ -27,7 +27,7 @@ function Details() {
     searchData()
   }, [id])
 
-  const imageClick = id => {
+  const cardClick = id => {
     navigate(`/`)
   }
 
@@ -41,7 +41,7 @@ function Details() {
               className="button"
               src="https://cdn-icons-png.flaticon.com/512/60/60651.png"
               alt=""
-              onClick={() => imageClick()}
+              onClick={() => cardClick()}
             />
 
             <p className="titleVideo" key={results.id}>

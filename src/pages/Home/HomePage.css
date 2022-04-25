@@ -40,6 +40,7 @@
   border-radius: 7px;
   box-shadow: 0 0 0.5em black;
   object-fit: contain;
+  cursor:pointer;
 }
 
 .cardVideo:hover {
@@ -60,7 +61,7 @@
     z-index: 2;
     opacity: 0.3;
     transition: .3s ease;
-    cursor:pointer;
+
 }
 
 .imgPlay:hover{

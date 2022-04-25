@@ -29,4 +29,4 @@ Projeto construido com:
 
 </div>
 
-<p>Quer ver o resultado? <a href="https://search-videos.surge.sh/" target="_blank">Clique aqui</a>.
+<p>Quer ver o resultado? <a href="api-search-videos.surge.sh" target="_blank">Clique aqui</a>.

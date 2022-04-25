@@ -30,7 +30,7 @@ function HomePage() {
     }
   }, [query])
 
-  const imageClick = id => {
+  const cardClick = id => {
     navigate(`/${id}`)
   }
 
@@ -46,7 +46,11 @@ function HomePage() {
         <div className="listCards">
           {results.map(video => {
             return (
-              <div key={video.etag} className="cardVideo">
+              <div
+                key={video.etag}
+                className="cardVideo"
+                onClick={() => cardClick(video.id.videoId)}
+              >
                 <div className="Imgs">
                   <div
                     className="cardImg"
@@ -59,7 +63,6 @@ function HomePage() {
                     className="imgPlay"
                     src="https://cdn-icons-png.flaticon.com/512/0/375.png"
                     alt=""
-                    onClick={() => imageClick(video.id.videoId)}
                   />
                 </div>
                 <div className="texts">
